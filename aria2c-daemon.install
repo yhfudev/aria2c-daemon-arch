@@ -4,12 +4,14 @@ post_install() {
 	useradd aria2c -d /var/aria2c -U -s /bin/nologin && echo " done."
 	passwd -l aria2c &>/dev/null
 
-	chown aria2c:aria2c /etc/conf.d/aria2c-env.conf
-	chmod 600 /etc/conf.d/aria2c-env.conf
-
 	install -d /var/aria2c/
 	touch /var/aria2c/aria2c.log
 	touch /var/aria2c/aria2c.session
+
+	chmod 600 /etc/conf.d/aria2c.conf
+	chown aria2c:aria2c /etc/conf.d/aria2c.conf
+	chown aria2c:aria2c /etc/conf.d/aria2c-env.conf
+	chown -R aria2c:aria2c /var/aria2c/
 }
 
 post_remove() {
