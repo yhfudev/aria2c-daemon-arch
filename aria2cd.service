@@ -1,0 +1,15 @@
+[Unit]
+Description=aria2c Service
+Requires=network.target
+After=dhcpcd.service
+
+[Service]
+Type=forking
+User=aria2c
+Group=aria2c
+EnvironmentFile=/etc/conf.d/aria2c-env.conf
+WorkingDirectory=$ARIA2C_HOME
+ExecStart=/usr/bin/aria2c $ARIA2C_ARGS
+ExecReload=/usr/bin/kill -HUP $MAINPID
+RestartSec=1min
+Restart=on-failure
