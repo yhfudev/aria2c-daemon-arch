@@ -7,9 +7,9 @@ After=dhcpcd.service
 Type=forking
 User=aria2c
 Group=aria2c
+WorkingDirectory=/var/aria2c
 EnvironmentFile=/etc/conf.d/aria2c-env.conf
-WorkingDirectory=$ARIA2C_HOME
-ExecStart=/usr/bin/aria2c $ARIA2C_ARGS
+ExecStart=/usr/bin/aria2c -D --conf-path=${ARIA2C_CONF} --save-session-interval=180 --save-session=${ARIA2C_SESSION}
 ExecReload=/usr/bin/kill -HUP $MAINPID
 RestartSec=1min
 Restart=on-failure
