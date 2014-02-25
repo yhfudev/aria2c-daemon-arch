@@ -5,8 +5,8 @@ post_install() {
 	useradd aria2c -d /var/aria2c -U -s /bin/nologin && echo " done."
 	passwd -l aria2c &>/dev/null
 
-	chown aria2c:aria2c /etc/conf.d/aria2c-evn.conf
-	chmod 600 /etc/conf.d/aria2c-evn.conf
+	chown aria2c:aria2c /etc/conf.d/aria2c-env.conf
+	chmod 600 /etc/conf.d/aria2c-env.conf
 
 	touch /var/aria2c/aria2c.log
 	touch /var/aria2c/aria2c.session

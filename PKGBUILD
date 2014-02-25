@@ -27,7 +27,7 @@ build() {
 }
 
 package() {
-	install -D -m644 "${srcdir}/${_gitdir}/aria2c-evn.conf" "${pkgdir}/etc/conf.d/aria2c-evn.conf"
+	install -D -m644 "${srcdir}/${_gitdir}/aria2c-env.conf" "${pkgdir}/etc/conf.d/aria2c-env.conf"
 	install -D -m600 "${srcdir}/${_gitdir}/aria2c.conf"     "${pkgdir}/etc/conf.d/aria2c.conf"
 	install -D -m755 "${srcdir}/${_gitdir}/aria2cd.service" "${pkgdir}/etc/systemd/system/aria2cd.service"
 }
