@@ -21,7 +21,7 @@ build() {
 	if [ -d ${_gitdir}/.git ]; then
 		(cd ${_gitdir} && git pull origin)
 	else
-		(git clone ${_giturl})
+		(git clone ${_giturl} ${_gitdir})
 	fi
 	msg 'GIT repository downloaded...'
 }
