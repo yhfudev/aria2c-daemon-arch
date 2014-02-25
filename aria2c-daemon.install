@@ -1,4 +1,3 @@
-
 post_install() {
 	echo -n "Adding aria2c user and group ..."
 	# --no-create-home
@@ -8,9 +7,9 @@ post_install() {
 	chown aria2c:aria2c /etc/conf.d/aria2c-env.conf
 	chmod 600 /etc/conf.d/aria2c-env.conf
 
+	install -d /var/aria2c/
 	touch /var/aria2c/aria2c.log
 	touch /var/aria2c/aria2c.session
-	touch /var/aria2c/aria2c.log
 }
 
 post_remove() {
