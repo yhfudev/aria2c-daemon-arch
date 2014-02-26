@@ -1,17 +1,17 @@
 post_install() {
 	echo -n "Adding aria2c user and group ..."
 	# --no-create-home
-	useradd aria2c -d /var/lib/aria2c/ -U -s /bin/nologin && echo " done."
+	useradd aria2c -d /var/share/aria2c/ -U -s /bin/nologin && echo " done."
 	passwd -l aria2c &>/dev/null
 
-	install -d /var/lib/aria2c/
-	touch /var/lib/aria2c/aria2c.log
-	touch /var/lib/aria2c/aria2c.session
+	install -d /var/share/aria2c/
+	touch /var/share/aria2c/aria2c.log
+	touch /var/share/aria2c/aria2c.session
 
 	chmod 600 /etc/conf.d/aria2c.conf
 	chown aria2c:aria2c /etc/conf.d/aria2c.conf
 	chown aria2c:aria2c /etc/conf.d/aria2c-env.conf
-	chown -R aria2c:aria2c /var/lib/aria2c/
+	chown -R aria2c:aria2c /var/share/aria2c/
 }
 
 post_remove() {

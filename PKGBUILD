@@ -13,9 +13,9 @@ makedepends=('git')
 url='https://github.com/yhfudev/aria2c-daemon-arch.git'
 install=$pkgname.install
 source=( aria2c-env.conf aria2c.conf aria2cd.service )
-md5sums=('0ef793819f1d68a84b8ece7cd341d7a9'
-         '61fba3e452c991452d62f62234ce6237'
-         '4df8c91dce2d511a6682dd75658c3340')
+md5sums=('ed34ec0a71bf7c9e4174a6ffffa6decc'
+         '8766000feac4339b314e262474b550c8'
+         'e758c3ed67d1e6851198e77c28d3cef1')
 
 _giturl='https://github.com/yhfudev/aria2c-daemon-arch.git'
 _gitdir='aria2c-daemon-git'
