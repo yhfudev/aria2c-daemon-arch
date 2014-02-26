@@ -13,3 +13,6 @@ ExecStart=/usr/bin/aria2c -D --conf-path=${ARIA2C_CONF} --save-session-interval=
 ExecReload=/usr/bin/kill -HUP $MAINPID
 RestartSec=1min
 Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
